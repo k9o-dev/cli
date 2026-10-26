@@ -1,0 +1,44 @@
+{
+  "name": "@k9o/cli",
+  "version": "1.3.0",
+  "description": "k9o — the Kilimanjaro CLI. Operator sign-in or service token, then project, migration, function, policy, audit, org, me, storage, vault-secret, ext-admin and config commands. Distributed via npm + Homebrew + standalone binaries.",
+  "type": "module",
+  "main": "src/index.ts",
+  "bin": {
+    "k9o": "dist/index.js"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./ext-admin-contract": "./src/ext-admin-contract.ts"
+  },
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://kilimanjaro.dev",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k9o-dev/k9o-cli",
+    "directory": "packages/cli"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "start": "bun run src/index.ts",
+    "build": "bun run scripts/build.ts",
+    "prepublishOnly": "bun run scripts/build.ts"
+  },
+  "devDependencies": {
+    "@k9o/core": "*",
+    "bun-types": "^1.1.0",
+    "typescript": "^5.6.0"
+  }
+}
